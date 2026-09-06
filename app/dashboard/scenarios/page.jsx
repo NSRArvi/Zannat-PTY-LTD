@@ -1,7 +1,7 @@
 import ScenariosPage from "../../../components/dashboard/pages/scenarios/ScenariosPage";
 
 export const metadata = {
-  title: "Scenarios | Zannat PTY LTD",
+  title: "Scenarios",
   description: "Zannat PTY LTD",
 };
 

@@ -14,10 +14,11 @@ export default function Sidebar() {
       </div>
       <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
         {MenuItems.map((item, index) => {
+          const keyword = item.link.split("/").pop();
           const isActive =
             item.link === "/dashboard"
               ? pathname === "/dashboard"
-              : pathname?.startsWith(item.link);
+              : pathname?.includes(keyword);
           const Icon = item.icon;
 
           return (

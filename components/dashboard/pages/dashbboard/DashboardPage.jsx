@@ -1,4 +1,3 @@
-import { Plus } from "lucide-react";
 import PageHeader from "../../shared/PageHeader";
 import Stats from "./Stats";
 import ApplicationPipeline from "./ApplicationPipeline";
@@ -7,6 +6,7 @@ import Performance from "./Performance";
 import TopLenders from "./TopLenders";
 import RecentScenarios from "./RecentScenarios";
 import RecentActivities from "./RecentActivities";
+import CustomLink from "../../shared/CustomLink";
 
 export default function DashboardPage() {
   return (
@@ -20,10 +20,10 @@ export default function DashboardPage() {
         />
 
         {/* Action Button */}
-        <button className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-gradient-start to-secondary hover:from-secondary hover:to-gradient-end text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-sm">
-          <Plus className="w-5 h-5" />
-          Create Scenario
-        </button>
+        <CustomLink
+          href={"/dashboard/create-scenarios"}
+          title={"Create Scenario"}
+        />
       </div>
 
       {/* Stats & Application Pipeline */}

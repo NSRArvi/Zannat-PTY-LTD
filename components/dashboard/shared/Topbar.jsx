@@ -14,7 +14,7 @@ import Sidebar from "./Sidebar";
 
 export default function Topbar() {
   const pathname = usePathname();
-  const currentPath = pathname.split("/").pop();
+  const currentPath = pathname.split("/").pop().replace(/-/g, " ");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (

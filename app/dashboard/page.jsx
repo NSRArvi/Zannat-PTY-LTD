@@ -1,7 +1,7 @@
 import DashboardPage from "../../components/dashboard/pages/dashbboard/DashboardPage";
 
 export const metadata = {
-  title: "Dashboard | Zannat PTY LTD",
+  title: "Dashboard",
   description: "Zannat PTY LTD",
 };
 

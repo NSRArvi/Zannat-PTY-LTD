@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function page() {
   return (
-    <div className="flex justify-center items-center h-screen text-5xl uppercase">root page</div>
-  )
+    <div className="flex justify-center items-center h-screen text-5xl uppercase">
+      root page
+    </div>
+  );
 }

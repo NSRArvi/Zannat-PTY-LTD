@@ -1,8 +1,8 @@
-import { Plus } from "lucide-react";
 import PageHeader from "../../shared/PageHeader";
 import ScenariosFilters from "./ScenariosFilters";
 import ScenariosTable from "./ScenariosTable";
 import Pagination from "../../shared/Pagination";
+import CustomLink from "../../shared/CustomLink";
 
 export default function ScenariosPage() {
   return (
@@ -16,18 +16,20 @@ export default function ScenariosPage() {
         />
 
         {/* Action Button */}
-        <button className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-gradient-start to-secondary hover:from-secondary hover:to-gradient-end text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-sm">
-          <Plus className="w-5 h-5" />
-          Create Scenario
-        </button>
+        <CustomLink
+          href={"/dashboard/create-scenarios"}
+          title={"Create Scenario"}
+        />
       </div>
 
-      {/* Filters Section */}
-      <ScenariosFilters />
+      <div className="bg-white rounded-2xl border border-gray-200 p-6 space-y-6">
+        {/* Filters Section */}
+        <ScenariosFilters />
 
-      {/* Scenarios Table Section */}
-      <ScenariosTable />
-      <Pagination />
+        {/* Scenarios Table Section */}
+        <ScenariosTable />
+        <Pagination />
+      </div>
     </section>
   );
 }

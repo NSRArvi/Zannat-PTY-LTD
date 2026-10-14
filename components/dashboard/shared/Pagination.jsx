@@ -2,14 +2,14 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Pagination() {
+export default function Pagination({ text = "Showing 1 to 10 of 248 scenarios" }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pages = [1, 2, 3, "...", 25];
 
   return (
     <div className="flex items-center justify-between">
       <p className="text-text-primary text-sm">
-        Showing 1 to 10 of 248 scenarios
+        {text}
       </p>
 
       <div className="flex items-center gap-2">

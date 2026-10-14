@@ -161,7 +161,11 @@ export default function ScenariosTable() {
   const toggleRow = (index) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      next.has(index) ? next.delete(index) : next.add(index);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
       return next;
     });
   };
@@ -208,14 +212,16 @@ export default function ScenariosTable() {
               </td>
               <td className="px-2 py-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 shrink-0 rounded-full bg-[#e4e5fc] flex items-center justify-center text-primary font-semibold text-sm">
+                  <div className="w-10 h-10 shrink-0 rounded-full bg-[#e4e5fc] flex items-center justify-center text-primary font-bold text-sm">
                     {initials(row.customer)}
                   </div>
                   <div>
                     <p className="font-bold text-text-dark leading-tight">
                       {row.customer}
                     </p>
-                    <p className="text-text-primary text-sm">{row.email}</p>
+                    {row.email && (
+                      <p className="text-text-primary text-xs mt-0.5">{row.email}</p>
+                    )}
                   </div>
                 </div>
               </td>

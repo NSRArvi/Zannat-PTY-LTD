@@ -102,7 +102,7 @@ export default function ScenariosFilters() {
       {/* Row 2: sort by + clear filters */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <span className="text-text-primary text-sm">Sort by:</span>
+          <span className="text-text-primary text-sm">Short by:</span>
           <div className="relative">
             <select
               value={sortBy}

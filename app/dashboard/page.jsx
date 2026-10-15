@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useSyncExternalStore } from "react";
+import { Suspense, useSyncExternalStore } from "react";
 import DashboardPage from "../../components/dashboard/pages/admin/dashboard/DashboardPage";
 import CustomerDashboardPage from "../../components/dashboard/pages/customer/CustomerDashboardPage";
 
@@ -18,7 +18,7 @@ function subscribe() {
   return () => {};
 }
 
-export default function DashboardIndex() {
+function DashboardContent() {
   const searchParams = useSearchParams();
   const paramRole = searchParams.get("role");
   const storedRole = useSyncExternalStore(subscribe, getStoredRole, () => "admin");
@@ -30,4 +30,12 @@ export default function DashboardIndex() {
   }
 
   return <DashboardPage />;
+}
+
+export default function DashboardIndex() {
+  return (
+    <Suspense fallback={<div className="p-6">Loading dashboard...</div>}>
+      <DashboardContent />
+    </Suspense>
+  );
 }

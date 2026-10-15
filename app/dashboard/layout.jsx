@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import Sidebar from "../../components/dashboard/shared/Sidebar";
@@ -8,14 +9,25 @@ export default function layout({ children }) {
     <section className="flex h-screen overflow-hidden bg-background">
       <div className="hidden lg:flex flex-col w-72 h-screen flex-shrink-0 border-r border-gray-100 bg-white">
         <div className="py-5 flex justify-center items-center border-b border-gray-100">
-          <Image src={logo} alt="Logo" width={140} height={100} priority />
+          <Image
+            src={logo}
+            alt="Logo"
+            width={140}
+            height={45}
+            priority
+            style={{ width: "auto", height: "auto" }}
+          />
         </div>
         <div className="flex-1 overflow-y-auto">
-          <Sidebar />
+          <Suspense fallback={<div className="w-full h-full bg-white" />}>
+            <Sidebar />
+          </Suspense>
         </div>
       </div>
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Topbar />
+        <Suspense fallback={<div className="h-20 bg-white border-b border-gray-100" />}>
+          <Topbar />
+        </Suspense>
         <main className="flex-1 overflow-y-auto p-6">{children}</main>
       </div>
     </section>

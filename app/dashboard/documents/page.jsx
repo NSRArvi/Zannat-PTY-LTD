@@ -1,4 +1,4 @@
-import DocumentsPage from "../../../components/dashboard/pages/documents/DocumentsPage";
+import DocumentsPage from "../../../components/dashboard/pages/admin/documents/DocumentsPage";
 
 export const metadata = {
   title: "Documents",

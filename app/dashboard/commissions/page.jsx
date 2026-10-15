@@ -1,4 +1,4 @@
-import CommissionsPage from "../../../components/dashboard/pages/commissions/CommissionsPage";
+import CommissionsPage from "../../../components/dashboard/pages/admin/commissions/CommissionsPage";
 
 export const metadata = {
   title: "Commissions",

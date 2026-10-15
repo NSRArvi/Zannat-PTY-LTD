@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import PageHeader from "../../shared/PageHeader";
+import PageHeader from "../../../shared/PageHeader";
 import ComplianceMetrics from "./ComplianceMetrics";
 import BrokerCompliance from "./BrokerCompliance";
 import CustomerCompliance from "./CustomerCompliance";

@@ -1,22 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { MenuItems, BottomMenuItems } from "./MenuItems";
+import { usePathname, useSearchParams } from "next/navigation";
+import {
+  MenuItems,
+  BottomMenuItems,
+  CustomerMenuItems,
+  CustomerBottomMenuItems,
+} from "./MenuItems";
 
-export default function Sidebar() {
+export default function Sidebar({ role: propRole }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Determine if customer mode from prop or query param or cookie/storage
+  const isCustomer =
+    propRole === "customer" || searchParams.get("role") === "customer";
+
+  const mainItems = isCustomer ? CustomerMenuItems : MenuItems;
+  const bottomItems = isCustomer ? CustomerBottomMenuItems : BottomMenuItems;
+  const portalTitle = isCustomer ? "Customer's Portal" : "Broker's Portal";
 
   return (
-    <aside className="w-72 h-screen bg-white border-r border-gray-100 flex flex-col font-sans">
+    <aside className="w-full h-full bg-white flex flex-col font-sans">
       <div className="p-4">
-        <h1 className="text-text-primary">Broker's Portal</h1>
+        <h1 className="text-text-primary font-medium text-sm">{portalTitle}</h1>
       </div>
       <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
-        {MenuItems.map((item, index) => {
-          const keyword = item.link.split("/").pop();
+        {mainItems.map((item, index) => {
+          const itemBase = item.link.split("?")[0];
+          const keyword = itemBase.split("/").pop();
           const isActive =
-            item.link === "/dashboard"
+            itemBase === "/dashboard"
               ? pathname === "/dashboard"
               : pathname?.includes(keyword);
           const Icon = item.icon;
@@ -25,7 +40,7 @@ export default function Sidebar() {
             <Link
               key={index}
               href={item.link}
-              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 font-semibold text-lg ${
+              className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 font-semibold text-base ${
                 isActive
                   ? "bg-secondary-light text-primary"
                   : "text-text-dark hover:bg-slate-50"
@@ -43,15 +58,16 @@ export default function Sidebar() {
       <div className="px-4 pb-8 mt-auto">
         <div className="h-px bg-gray-200 mb-6 mx-4"></div>
         <div className="space-y-2">
-          {BottomMenuItems.map((item, index) => {
-            const isActive = pathname === item.link;
+          {bottomItems.map((item, index) => {
+            const itemBase = item.link.split("?")[0];
+            const isActive = pathname === itemBase;
             const Icon = item.icon;
 
             return (
               <Link
                 key={index}
                 href={item.link}
-                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 font-semibold text-[16px] ${
+                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 font-semibold text-[15px] ${
                   isActive
                     ? "bg-secondary-light text-primary"
                     : "text-text-dark hover:bg-slate-50"

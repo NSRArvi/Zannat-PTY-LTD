@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
-import PageHeader from "../../shared/PageHeader";
-import Pagination from "../../shared/Pagination";
+import PageHeader from "../../../shared/PageHeader";
+import Pagination from "../../../shared/Pagination";
 import DocumentsFilters from "./DocumentsFilters";
 import DocumentsTable from "./DocumentsTable";
 

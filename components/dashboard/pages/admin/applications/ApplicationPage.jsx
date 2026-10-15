@@ -1,9 +1,9 @@
-import PageHeader from "../../shared/PageHeader";
-import Pagination from "../../shared/Pagination";
+import PageHeader from "../../../shared/PageHeader";
+import Pagination from "../../../shared/Pagination";
 import ApplicationFilters from "./ApplicationFilters";
 import ApplicationTable from "./ApplicationTable";
 
-export default function ScenariosPage() {
+export default function ApplicationPage() {
   return (
     <section className="space-y-6">
       {/* Header  */}

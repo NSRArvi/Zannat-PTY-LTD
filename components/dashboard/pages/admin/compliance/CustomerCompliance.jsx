@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 
 import { Search, ChevronDown, Calendar, RotateCcw } from "lucide-react";
-import Pagination from "../../shared/Pagination";
+import Pagination from "../../../shared/Pagination";
 
 const initialCustomerData = [
   {

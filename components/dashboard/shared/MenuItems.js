@@ -7,7 +7,9 @@ import {
   ShieldCheck, 
   BadgePercent,
   User,
-  Settings
+  Settings,
+  PlusCircle,
+  Headphones
 } from "lucide-react";
 
 export const MenuItems = [
@@ -60,3 +62,35 @@ export const BottomMenuItems = [
     icon: Settings,
   },
 ];
+
+export const CustomerMenuItems = [
+  {
+    title: "Dashboard",
+    link: "/dashboard?role=customer",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "New Application",
+    link: "/dashboard/create-scenarios",
+    icon: PlusCircle,
+  },
+  {
+    title: "Applications",
+    link: "/dashboard/applications?role=customer",
+    icon: FileText,
+  },
+];
+
+export const CustomerBottomMenuItems = [
+  {
+    title: "Account Settings",
+    link: "/dashboard/settings?role=customer",
+    icon: Settings,
+  },
+  {
+    title: "Contact Us",
+    link: "/dashboard/contact?role=customer",
+    icon: Headphones,
+  },
+];
+

@@ -1,4 +1,4 @@
-import ScenariosPage from "../../../components/dashboard/pages/scenarios/ScenariosPage";
+import ScenariosPage from "../../../components/dashboard/pages/admin/scenarios/ScenariosPage";
 
 export const metadata = {
   title: "Scenarios",

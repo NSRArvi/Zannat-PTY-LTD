@@ -1,5 +1,5 @@
-import PageHeader from "../../shared/PageHeader";
-import CustomLink from "../../shared/CustomLink";
+import PageHeader from "../../../shared/PageHeader";
+import CustomLink from "../../../shared/CustomLink";
 import AvailableScenarios from "./AvailableScenarios";
 import MyScenarios from "./MyScenarios";
 

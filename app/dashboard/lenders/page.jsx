@@ -1,4 +1,4 @@
-import LendersPage from "../../../components/dashboard/pages/lenders/LendersPage";
+import LendersPage from "../../../components/dashboard/pages/admin/lenders/LendersPage";
 
 export const metadata = {
   title: "Lenders",

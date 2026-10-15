@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
-import PageHeader from "../../shared/PageHeader";
-import Pagination from "../../shared/Pagination";
+import PageHeader from "../../../shared/PageHeader";
+import Pagination from "../../../shared/Pagination";
 import CommissionsMetrics from "./CommissionsMetrics";
 import CommissionsFilters from "./CommissionsFilters";
 import CommissionsTable from "./CommissionsTable";

@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 import AvailableScenariosFilters from "./AvailableScenariosFilters";
 import AvailableScenariosTable from "./AvailableScenariosTable";
 import ScenarioDetailsDrawer from "./ScenarioDetailsDrawer";
-import Pagination from "../../shared/Pagination";
+import Pagination from "../../../shared/Pagination";
 
 const initialAvailableScenarios = [
   {

@@ -1,4 +1,4 @@
-import ApplicationPage from "../../../components/dashboard/pages/applications/ApplicationPage";
+import ApplicationPage from "../../../components/dashboard/pages/admin/applications/ApplicationPage";
 
 export const metadata = {
   title: "Applications",

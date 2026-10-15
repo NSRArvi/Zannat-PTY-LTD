@@ -1,4 +1,4 @@
-import PageHeader from "../../shared/PageHeader";
+import PageHeader from "../../../shared/PageHeader";
 import Stats from "./Stats";
 import ApplicationPipeline from "./ApplicationPipeline";
 import NeedAttention from "./NeedAttention";
@@ -6,7 +6,7 @@ import Performance from "./Performance";
 import TopLenders from "./TopLenders";
 import RecentScenarios from "./RecentScenarios";
 import RecentActivities from "./RecentActivities";
-import CustomLink from "../../shared/CustomLink";
+import CustomLink from "../../../shared/CustomLink";
 
 export default function DashboardPage() {
   return (

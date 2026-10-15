@@ -1,7 +1,7 @@
 "use client";
 import ScenariosFilters from "./ScenariosFilters";
 import ScenariosTable from "./ScenariosTable";
-import Pagination from "../../shared/Pagination";
+import Pagination from "../../../shared/Pagination";
 
 export default function MyScenarios() {
   return (

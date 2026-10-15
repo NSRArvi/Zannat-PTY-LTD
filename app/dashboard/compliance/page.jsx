@@ -1,4 +1,4 @@
-import CompliancePage from "../../../components/dashboard/pages/compliance/CompliancePage";
+import CompliancePage from "../../../components/dashboard/pages/admin/compliance/CompliancePage";
 
 export const metadata = {
   title: "Compliance",
